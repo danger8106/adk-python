@@ -1,0 +1,1 @@
+# google-adk is already in the platform base image; this sample needs nothing else.
