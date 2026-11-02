@@ -1,0 +1,19 @@
+# orchestrate.yaml: how VoisX Orchestrate builds and runs this ADK sample.
+# The only file added to Google's hello_world sample (plus an empty requirements.txt).
+apiVersion: orchestrate.vois.ai/v1
+kind: Agent
+name: hello-adk-git
+description: Google ADK hello_world sample (roll_die, check_prime) from google/adk-python.
+framework: adk
+entrypoint: agent:root_agent
+python:
+  version: "3.12"
+  dependencies:
+    file: requirements.txt
+runtime:
+  resources: cpu-small
+  replicas: 1
+models:
+  # The sample sets no model; ADK agents with no model use this one,
+  # served in-cluster through the Model Gateway (no Gemini key needed).
+  default: qwen2.5:1.5b
