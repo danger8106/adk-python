@@ -16,4 +16,4 @@ runtime:
 models:
   # The sample sets no model; ADK agents with no model use this one,
   # served in-cluster through the Model Gateway (no Gemini key needed).
-  default: qwen2.5:1.5b
+  default: granite3.3:2b
